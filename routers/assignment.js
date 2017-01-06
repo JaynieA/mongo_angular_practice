@@ -26,10 +26,10 @@ router.post('/', function(req, res) {
 }); // end post
 
 //GET route
-router.get('/', function(req, res) {
-  console.log('get route hit', req.query);
-  //find all
-  User.find({}, function(err, results) {
+router.get('/:?', function(req, res) {
+  console.log('query-->', req.query.assignment);
+  //search by assignment name
+  User.find({assignment_name: req.query.assignment}, function(err, results) {
     if (err) {
       console.log(err);
     } else {

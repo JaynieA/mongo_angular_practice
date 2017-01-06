@@ -10,7 +10,7 @@ app.controller('AssignmentController', ['$scope' ,'$http', function($scope, $htt
     // var searchUrl = '/assignment?q=' + $scope.assignmentIn;
     $http({
       method: 'GET',
-      url: '/assignment?assignment=' + $scope.assignmentIn
+      url: '/assignment?assignment=' + $scope.assignmentSearchIn
     }).then( function( response ) {
       console.log('response:', response);
       $scope.searchResults = response.data;

@@ -17,14 +17,16 @@
       <input type="text" ng-model="assignmentSearchIn" placeholder="assignment"> {{assignmentSearchIn}}
       <button type="button" ng-click="getAssignment()">Search</button>
     </div>
-    <hr>
-    <p>Add assignments:</p>
+
+
     <div ng-repeat="result in searchResults">
       <p>Name: {{result.assignment_name}} </p>
       <p>Student: {{result.student_name}}</p>
       <p>Completed: {{result.completed}}</p>
     </div>
 
+    <hr>
+    <p>Add assignments:</p>
     <div>
       <label>Assignment Name:</label>
       <input type="text"  ng-model="assignmentIn" placeholder="assignment name">
