@@ -19,5 +19,19 @@ app.controller('AssignmentController', ['$scope' ,'$http', function($scope, $htt
 
   $scope.postAssignment = function(req, res) {
     console.log('in postAssignment');
+    var objectToSend = {
+      assignment_name: $scope.assignmentIn,
+      student_name: $scope.studentIn,
+      score: $scope.scoreIn,
+      completed: $scope.completedIn
+    }; // end objectToSend
+    console.log(objectToSend);
+    $http({
+      method: 'POST',
+      url: '/assignment',
+      data: objectToSend
+    }).then(function(response) {
+      console.log(response);
+    }); // end $http POST
   }; // end postAssignment
 }]); // end controller
