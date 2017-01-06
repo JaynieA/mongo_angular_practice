@@ -10,8 +10,20 @@
 </head>
 <body ng-app="app">
   <h1>Mongo/Angular Experiment</h1>
-  <div ng-controller="AssignmentController">
+  <main ng-controller="AssignmentController">
+    <label>Search for Assignment:</label>
+    <input type="text" ng-model="assignmentIn" placeholder="assignment"> {{assignmentIn}}
 
-  </div>
+    <!-- <label>Search for Student:</label>
+    <input type="text" ng-model="studentIn" placeholder="student"> {{studentIn}} -->
+
+    <button type="button" ng-click="getAssignment()">Search</button>
+
+    <div ng-repeat="result in searchResults">
+      <p>Name: {{result.assignment_name}} </p>
+      <p>Student: {{result.student_name}}</p>
+      <p>Completed: {{result.completed}}</p>
+    </div>
+  </main>
 </body>
 </html>

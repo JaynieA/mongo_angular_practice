@@ -27,14 +27,14 @@ router.post('/', function(req, res) {
 
 //GET route
 router.get('/', function(req, res) {
-  console.log('get route hit');
+  console.log('get route hit', req.query);
   //find all
   User.find({}, function(err, results) {
     if (err) {
       console.log(err);
     } else {
       console.log(results);
-      res.sendStatus(200);
+      res.send(results);
     } // end else
   }); // end find
 }); // end get
