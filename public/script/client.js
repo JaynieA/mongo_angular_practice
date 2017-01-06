@@ -6,7 +6,7 @@ var app = angular.module('app', []);
 app.controller('AssignmentController', ['$scope' ,'$http', function($scope, $http) {
   console.log('NG');
   $scope.getAssignment = function() {
-    console.log('in getAssignment. Searching for:', $scope.assignmentIn);
+    console.log('in getAssignment. Searching for:', $scope.assignmentSearchIn);
     // var searchUrl = '/assignment?q=' + $scope.assignmentIn;
     $http({
       method: 'GET',
@@ -16,4 +16,8 @@ app.controller('AssignmentController', ['$scope' ,'$http', function($scope, $htt
       $scope.searchResults = response.data;
     });
   }; // end getAssignment
+
+  $scope.postAssignment = function(req, res) {
+    console.log('in postAssignment');
+  }; // end postAssignment
 }]); // end controller
